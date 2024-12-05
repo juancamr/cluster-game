@@ -10,5 +10,10 @@ public class Navegar : MonoBehaviour
     {
         SceneManager.LoadScene(NombreNivel);
     }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
    
 }
