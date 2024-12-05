@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,33 +6,29 @@ using UnityEngine.SceneManagement; // Importar para manejar escenas
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Velocidad de movimiento
-    public float jumpForce = 7f; // Fuerza de salto
-    public float mouseSensitivity = 100f; // Sensibilidad del ratón
+    public float moveSpeed = 5f; 
+    public float jumpForce = 7f; 
+    public float mouseSensitivity = 100f; 
 
-    public Transform cameraTransform; // Referencia a la cámara del jugador
+    public Transform cameraTransform; 
 
-    private Rigidbody rb; // Referencia al Rigidbody
-    private float verticalRotation = 0f; // Rotación vertical de la cámara
-    private bool isGrounded; // Indica si el jugador está en el suelo
+    private Rigidbody rb; 
+    private float verticalRotation = 0f;
+    private bool isGrounded; 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        // Bloquear el cursor en el centro de la pantalla
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        // Control de rotación con el ratón
         HandleMouseLook();
 
-        // Movimiento del jugador con WASD
         HandleMovement();
 
-        // Salto
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -66,9 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Finish"))
         {
-            print("llegaste a la meta");
-            // cambie de escena hacia un menu con el resumen de la ronda actual
-            // y un boton para poder pasar al siguiente nivel
+            SceneManager.LoadScene("Menu");
         }
         else if (collision.gameObject.CompareTag("Truck") || collision.gameObject.CompareTag("Obstaculo"))
         {
@@ -90,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void RestartScene()
     {
-        // Reiniciar la escena actual
-        print(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

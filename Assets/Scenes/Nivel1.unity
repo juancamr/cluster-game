@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 40
   jumpForce: 20
-  mouseSensitivity: 300
+  mouseSensitivity: 100
   cameraTransform: {fileID: 258185169}
 --- !u!54 &837845232
 Rigidbody:
@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88ab44b8385a10b4f8878efffe8e75a2, type: 3}
       propertyPath: m_TagString
-      value: Obstaculo
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1528,7 +1528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88ab44b8385a10b4f8878efffe8e75a2, type: 3}
       propertyPath: m_TagString
-      value: Obstaculo
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2057,7 +2057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88ab44b8385a10b4f8878efffe8e75a2, type: 3}
       propertyPath: m_TagString
-      value: Obstaculo
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
