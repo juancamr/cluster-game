@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag("Finish"))
         {
             print("llegaste a la meta");
@@ -90,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
     private void RestartScene()
     {
         // Reiniciar la escena actual
+        print(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
