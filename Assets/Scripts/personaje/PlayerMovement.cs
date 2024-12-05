@@ -62,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Finish"))
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             SceneManager.LoadScene("Menu");
         }
         else if (collision.gameObject.CompareTag("Truck") || collision.gameObject.CompareTag("Obstaculo"))
