@@ -63,14 +63,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Detectar si el jugador está en el suelo o en un camión
-        if (collision.gameObject.CompareTag("Truck") || collision.gameObject.CompareTag("Obstaculo"))
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            print("llegaste a la meta");
+            // cambie de escena hacia un menu con el resumen de la ronda actual
+            // y un boton para poder pasar al siguiente nivel
+        }
+        else if (collision.gameObject.CompareTag("Truck") || collision.gameObject.CompareTag("Obstaculo"))
         {
             isGrounded = true;
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
-            RestartScene(); // Reiniciar la escena al tocar el suelo
+            RestartScene();
         }
     }
 
